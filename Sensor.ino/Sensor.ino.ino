@@ -23,8 +23,8 @@ void loop() {
   duration = pulseIn(echoPin, HIGH);
 
   // using the duration to calculate the sensor
-  distanceCm = duration *  100 / 10,800;
-  distanceInch = duration * 100 / 28,400;
+  distanceCm = duration *  100 / 10,800 / 1940;
+  distanceInch = duration * 100 / 28,400 / 1,015;
   Serial.print("Distance: ");
   Serial.print(distanceCm);
   Serial.print(" cm/");
