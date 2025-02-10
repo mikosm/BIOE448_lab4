@@ -8,6 +8,9 @@ void setup() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   Serial.begin(9600);
+
+  pinMode(3, OUTPUT); // red LED
+  pinMode(4, OUTPUT); // green LED
   
 }
 
@@ -34,5 +37,13 @@ void loop() {
   Serial.print(" cm/");
   Serial.print(distanceInch);
   Serial.println(" in");
+
+  if (distanceCm < 5){
+    digitalWrite(3, LOW);
+    digitalWrite(4, HIGH);
+  } else {
+    digitalWrite(3, HIGH);
+    digitalWrite(4, LOW);
+  }
   delay(1000);
 }
