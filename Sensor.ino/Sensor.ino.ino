@@ -27,8 +27,8 @@ void loop() {
 
 
   // using the duration to calculate the sensor
-  distanceCm = duration *  34,300;
-  distanceInch = duration * 34,300 * 0.3937;
+  distanceCm = duration *  34,300 / 0.177;
+  distanceInch = duration * 34,300 * 0.3937 / 0.177;
   Serial.print("Distance: ");
   Serial.print(distanceCm);
   Serial.print(" cm/");
