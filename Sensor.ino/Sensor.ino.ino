@@ -1,7 +1,7 @@
 const int trigPin = 11;
 const int echoPin = 12;
 long duration;
-int distanceCm, distanceInch;
+double distanceCm, distanceInch;
 
 void setup() {
   // put your setup code here, to run once:
@@ -23,12 +23,12 @@ void loop() {
   duration = pulseIn(echoPin, HIGH);
   Serial.print("Duration: ");
   Serial.print(duration);
-    Serial.print(" micros/");
+  Serial.print(" micros/");
 
 
   // using the duration to calculate the sensor
-  distanceCm = duration / 1000 * 34,300;
-  distanceInch = duration / 1000 * 34,300 * 0.3937;
+  distanceCm = duration * 0.0343/2;
+  distanceInch = duration * (0.0343 * 0.3937)/2;
   Serial.print("Distance: ");
   Serial.print(distanceCm);
   Serial.print(" cm/");
