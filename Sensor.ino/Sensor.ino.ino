@@ -21,10 +21,14 @@ void loop() {
   
   // calculating the duration
   duration = pulseIn(echoPin, HIGH);
+  Serial.print("Duration: ");
+  Serial.print(duration);
+    Serial.print(" micros/");
+
 
   // using the duration to calculate the sensor
-  distanceCm = duration *  100 / 10,800 / 1015 / 750;
-  distanceInch = duration * 100 / 28,400 / 1940 / 900;
+  distanceCm = duration *  34,300;
+  distanceInch = duration * 34,300 * 0.3937;
   Serial.print("Distance: ");
   Serial.print(distanceCm);
   Serial.print(" cm/");
